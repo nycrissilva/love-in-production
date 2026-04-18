@@ -163,6 +163,7 @@ h2 {
 .btn.spotify {
   background: #1db954;
   text-align: center;
+  text-decoration: none;
 }
 
 .login-hint,

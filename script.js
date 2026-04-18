@@ -122,6 +122,7 @@ const localStorageKey = 'loveLoginAccepted';
 const localStorageCountKey = 'loveVisitCount';
 const targetSundayHour = 21; // domingo às 21h para contador
 const secretReleaseOffsetMinutes = 60; // carta libera 1 hora antes do horário final
+const previewMode = new URLSearchParams(window.location.search).get('preview') === 'yes'; // use ?preview=yes para ver a carta agora
 
 const loginPanel = document.getElementById('loginPanel');
 const contentPanel = document.getElementById('contentPanel');
@@ -223,11 +224,13 @@ function updateSecretSection() {
   const remaining = nextSunday - now;
   const releaseThreshold = secretReleaseOffsetMinutes * 60 * 1000;
 
-  if (remaining <= 0 || remaining <= releaseThreshold) {
+  if (previewMode || remaining <= 0 || remaining <= releaseThreshold) {
     secretSection.classList.remove('hidden');
-    secretHint.textContent = remaining <= 0
-      ? 'a carta pode ser aberta. clique no botão.'
-      : `a carta foi liberada! ainda faltam ${Math.ceil(remaining / 60000)} minutos para a contagem acabar.`;
+    secretHint.textContent = previewMode
+      ? 'modo preview ativado: carta liberada antes do horário para você conferir.'
+      : remaining <= 0
+        ? 'a carta pode ser aberta. clique no botão.'
+        : `a carta foi liberada! ainda faltam ${Math.ceil(remaining / 60000)} minutos para a contagem acabar.`;
     openLetterButton.classList.remove('hidden');
   } else {
     secretSection.classList.add('hidden');
