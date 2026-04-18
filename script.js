@@ -120,7 +120,8 @@ quem sempre sonha com você.`;
 const spotifyLink = 'https://open.spotify.com/playlist/37i9dQZF1DX3PIPIT6lEg5';
 const localStorageKey = 'loveLoginAccepted';
 const localStorageCountKey = 'loveVisitCount';
-const targetSundayHour = 21; // domingo às 21h para contador e carta
+const targetSundayHour = 21; // domingo às 21h para contador
+const secretReleaseOffsetMinutes = 60; // carta libera 1 hora antes do horário final
 
 const loginPanel = document.getElementById('loginPanel');
 const contentPanel = document.getElementById('contentPanel');
@@ -219,9 +220,14 @@ function updateCountdown() {
 function updateSecretSection() {
   const now = new Date();
   const nextSunday = nextSundayAt(targetSundayHour);
-  if (now >= nextSunday) {
+  const remaining = nextSunday - now;
+  const releaseThreshold = secretReleaseOffsetMinutes * 60 * 1000;
+
+  if (remaining <= 0 || remaining <= releaseThreshold) {
     secretSection.classList.remove('hidden');
-    secretHint.textContent = 'a carta pode ser aberta. clique no botão.';
+    secretHint.textContent = remaining <= 0
+      ? 'a carta pode ser aberta. clique no botão.'
+      : `a carta foi liberada! ainda faltam ${Math.ceil(remaining / 60000)} minutos para a contagem acabar.`;
     openLetterButton.classList.remove('hidden');
   } else {
     secretSection.classList.add('hidden');
