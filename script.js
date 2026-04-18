@@ -6,7 +6,7 @@
 // - spotifyLink: URL da playlist
 // - targetSundayHour: horário alvo do contador
 
-const validPasswords = ['amor', 'carinho', 'oração', 'Deus', 'sorriso', 'saber te amar'];
+const validPasswords = ['amor','fernando','luis', 'luis fernando','nando', 'carinho', 'oração', 'Deus', 'sorriso', 'saber te amar'];
 const romanticPhrases = [
   'cada batida do meu coração lembra você.',
   'você é meu sorriso preferido em qualquer dia.',
