@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para o Nando | Amor em Página</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page" id="page">
+    <section class="login-panel" id="loginPanel">
+      <div class="card login-card">
+        <div class="card-header">
+          <div class="heart">❤</div>
+          <h1>before you enter...</h1>
+          <p>a senha é a mesma que você usou pra entrar no meu coração</p>
+        </div>
+        <div class="login-body">
+          <input type="text" id="passwordInput" placeholder="digita aqui..." autocomplete="off" />
+          <button id="loginButton" class="btn">entrar</button>
+          <p class="message" id="loginMessage"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-panel hidden" id="contentPanel">
+      <div class="card main-card fade-in">
+        <div class="hero">
+          <div class="hero-line">oi futuro marido,</div>
+          <div class="hero-title">Nando</div>
+          <p class="hero-subtitle">uma surpresa feita com carinho só pra você</p>
+          <p class="visit-count" id="visitCount"></p>
+        </div>
+
+        <div class="highlight-card">
+          <p class="headline" id="timeGreeting"></p>
+          <p class="random-phrase" id="randomPhrase"></p>
+          
+        </div>
+
+        <div class="grid">
+          <article class="card info-card">
+            <h2>contagem regressiva</h2>
+            <p id="countdownText">carregando...</p>
+          </article>
+
+          <article class="card info-card hidden" id="secretSection">
+            <h2>carta secreta</h2>
+            <div id="secretArea" class="secret-area">
+              <p id="secretHint"></p>
+              <button id="openLetterButton" class="btn secondary hidden">abrir carta</button>
+              <div id="letterContent" class="letter hidden"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="actions">
+          <a id="spotifyButton" class="btn spotify" href="#" target="_blank" rel="noopener noreferrer">ouve isso e lembra de mim</a>
+          <button id="logoutButton" class="btn outline">sair</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
