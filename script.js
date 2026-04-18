@@ -133,7 +133,7 @@ e que agora de alguma forma também envolve você.
 
 com todo carinho,
 quem sempre sonha com você.`;
-const spotifyLink = 'https://open.spotify.com/playlist/37i9dQZF1DX3PIPIT6lEg5';
+const spotifyLink = 'https://open.spotify.com/playlist/3pbicyWrL1AxAf64D4MKEa?si=297b40dab0f64825';
 const localStorageKey = 'loveLoginAccepted';
 const localStorageCountKey = 'loveVisitCount';
 const targetSundayHour = 21; // domingo às 21h para contador
