@@ -136,7 +136,7 @@ quem sempre sonha com você.`;
 const spotifyLink = 'https://open.spotify.com/playlist/3pbicyWrL1AxAf64D4MKEa?si=297b40dab0f64825';
 const localStorageKey = 'loveLoginAccepted';
 const localStorageCountKey = 'loveVisitCount';
-const targetSundayHour = 21; // domingo às 21h para contador
+const targetSundayHour = 18; // domingo às 21h para contador
 const secretReleaseOffsetMinutes = 60; // carta libera 1 hora antes do horário final
 const previewMode = new URLSearchParams(window.location.search).get('preview') === 'yes'; // use ?preview=yes para ver a carta agora
 
